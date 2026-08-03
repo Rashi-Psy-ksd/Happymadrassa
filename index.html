@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Happy Madrassa — Private Islamic Tutoring for Malayali Families Abroad</title>
+<meta name="description" content="Happy Madrassa brings Kerala's madrassa tradition into your home, wherever you live in the world — private, one-to-one Islamic education for Malayali Muslim children in Canada, the UK, the US, Australia, Fiji and beyond." />
+
+<!-- Fonts: elegant display serif + Arabic calligraphic face + clean geometric sans -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Amiri:wght@400;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  /* Light Theme Palette */
+  --bg-primary: #ffffff; /* Clean white background */
+  --bg-secondary: #f9f9f9; /* Very light grey for contrast sections */
+  --text-main: #1a202c; /* Near black for optimal readability */
+  --text-muted: #4a5568; /* Dark grey for secondary text */
+  --gold: #d4af37; /* Classic bright gold */
+  --gold-hover: #b5952f;
+  --accent-light: #e2e8f0; /* Soft border/accent color */
+  
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'Jost', sans-serif;
+  --font-arabic: 'Amiri', serif;
+  
+  --transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--text-main);
+}
+
+.eyebrow {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.eyebrow::before {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 1px;
+  background-color: var(--gold);
+}
+
+.lede {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--text-main);
+  margin-bottom: 2rem;
+  line-height: 1.4;
+}
+
+.section-head {
+  margin-bottom: 4rem;
+  max-width: 600px;
+}
+
+.section-head.center {
+  text-align: center;
+  margin: 0 auto 4rem;
+}
+
+.section-head h2 {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  margin-bottom: 1rem;
+}
+
+.section-head p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+/* Buttons */
+.btn-gold {
+  display: inline-block;
+  background-color: var(--gold);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.9rem;
+  transition: var(--transition);
+  border: 1px solid var(--gold);
+}
+
+.btn-gold:hover {
+  background-color: var(--gold-hover);
+  border-color: var(--gold-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+.btn-ghost {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--text-main);
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.9rem;
+  transition: var(--transition);
+  border: 1px solid var(--text-muted);
+}
+
+.btn-ghost:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============ NAV ============ */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 0;
+  z-index: 100;
+  transition: var(--transition);
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.nav.scrolled {
+  padding: 1rem 0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.nav-inner {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand-mark {
+  font-family: var(--font-arabic);
+  color: var(--gold);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.nav-links {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+  }
+  
+  .nav-links a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: var(--transition);
+    position: relative;
+  }
+  
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--gold);
+    transition: width 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: var(--text-main);
+  }
+  
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+}
+
+.nav-cta {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  padding: 0.5rem 1.25rem;
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.nav-cta:hover {
+  background-color: var(--gold);
+  color: white;
+}
+
+/* ============ HERO ============ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 8rem 5% 4rem;
+  overflow: hidden;
+  background-color: var(--bg-primary);
+  /* Subtle background pattern for light theme */
+  background-image: radial-gradient(var(--accent-light) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.hero-arabic {
+  position: absolute;
+  top: 15vh;
+  right: -5vw;
+  font-family: var(--font-arabic);
+  font-size: 25vw;
+  color: rgba(212, 175, 55, 0.05); /* Very faint gold */
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+  line-height: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 55%;
+  max-width: 700px;
+  padding-right: 2rem;
+}
+
+@media (max-width: 1023px) {
+  .hero-content {
+    width: 100%;
+    max-width: 700px;
+    padding-right: 0;
+  }
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  margin-bottom: 1.5rem;
+  color: var(--text-main);
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.hero-sub {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 2rem;
+  border-top: 1px solid var(--accent-light);
+  padding-top: 2rem;
+}
+
+.hero-stats div {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-stats strong {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.hero-stats span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.5rem;
+}
+
+.hero-photo {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45%;
+  max-width: 600px;
+  z-index: 1;
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .hero-photo {
+    display: block;
+  }
+}
+
+.hero-photo img {
+  border-radius: 8px 8px 80px 8px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  object-fit: cover;
+  aspect-ratio: 4/5;
+}
+
+.hero-photo-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 0.8rem 1rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: var(--text-main);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.10);
+  font-style: italic;
+  font-family: var(--font-display);
+  text-align: center;
+  z-index: 3;
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(-50%) }
+  50% { transform: translateY(calc(-50% - 15px)) }
+  100% { transform: translateY(-50%) }
+}
+
+.marquee {
+  background-color: var(--gold);
+  color: white;
+  padding: 1rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.marquee-track {
+  display: inline-block;
+  animation: scroll 30s linear infinite;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.marquee-track span {
+  font-weight: 600;
+  margin: 0 1rem;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ============ ABOUT ============ */
+.about {
+  padding: 8rem 0;
+  background-color: var(--bg-primary);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.about-copy h2 {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 3.6vw, 44px);
+  margin: 0 0 26px;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.about-copy p:not(.eyebrow):not(.lede) {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+.about-photo {
+  position: relative;
+}
+
+.about-photo img {
+  border-radius: 4px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.about-photo > img {
+    aspect-ratio: 4/3;
+    object-fit: cover;
+}
+
+.ornament {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 100px;
+  height: 100px;
+  border: 1px solid var(--gold);
+  z-index: 0;
+}
+
+.about-photo img {
+  position: relative;
+  z-index: 1;
+}
+
+.about-accent {
+  position: absolute;
+  bottom: -10%;
+  left: -10%;
+  width: 40%;
+  z-index: 2;
+  border: 8px solid white;
+  border-radius: 4px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* ============ WHY ============ */
+.why {
+  padding: 8rem 0;
+  background-color: var(--bg-secondary);
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.why-card {
+  background: white;
+  padding: 2.5rem 2rem;
+  border-radius: 4px;
+  border: 1px solid var(--accent-light);
+  transition: var(--transition);
+}
+
+.why-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border-color: var(--gold);
+}
+
+.why-icon {
+  width: 40px;
+  height: 40px;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+
+.why-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.why-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* ============ SCRIPTURE BANNER ============ */
+.banner {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(44, 62, 80, 0.7); /* Dark overlay for text readability */
+  z-index: 1;
+}
+
+.banner img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 2rem;
+}
+
+.banner-arabic {
+  font-family: var(--font-arabic);
+  font-size: clamp(3rem, 6vw, 5rem);
+  margin-bottom: 1rem;
+  color: var(--gold);
+}
+
+.banner p:not(.banner-arabic) {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.banner cite {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+}
+
+/* ============ CURRICULUM ============ */
+.curriculum {
+  padding: 8rem 0;
+  background-color: var(--bg-primary);
+}
+
+.curr-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.curr-item {
+  padding: 2rem;
+  border-bottom: 1px solid var(--accent-light);
+  transition: var(--transition);
+}
+
+.curr-item:hover {
+  background-color: var(--bg-secondary);
+  border-bottom-color: var(--gold);
+}
+
+.curr-name {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.curr-name .ar {
+  font-family: var(--font-arabic);
+  font-size: 2rem;
+  color: var(--gold);
+}
+
+.curr-name .en {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.curr-desc {
+  color: var(--text-muted);
+}
+
+/* ============ DIRECTORS ============ */
+
+/* ============ DIRECTORS ============ */
+.directors {
+  padding: 8rem 0;
+  background-color: var(--bg-secondary);
+}
+
+/* Header */
+.directors .section-head {
+  margin-bottom: 0;
+}
+
+.directors .section-head p:last-child {
+  margin-bottom: 0;
+}
+
+/* Large intentional gap BEFORE director photos */
+.directors-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  max-width: 1000px;
+  margin: 7rem auto 0;
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .directors-grid {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5rem;
+  }
+}
+
+/* Individual Director */
+.director-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Portrait */
+.director-frame {
+  position: relative;
+  width: 220px;
+  height: 220px;
+
+  /* IMPORTANT:
+     small gap after image */
+  margin: 0 auto 1.2rem;
+}
+
+.director-frame .ring {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.director-frame .ring.outer {
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  border-style: dashed;
+  animation: spin 30s linear infinite;
+}
+
+.director-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.director-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* Director Name — close to portrait */
+.director-card h3 {
+  font-size: 1.8rem;
+  margin: 0 0 0.25rem;
+  line-height: 1.15;
+}
+
+/* Designation — close to name */
+.director-role {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin: 0 0 0.8rem;
+}
+
+/* Bio */
+.director-bio {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 350px;
+  margin: 0;
+}
+
+.floating-slow {
+  animation: directorFloat 8s ease-in-out infinite;
+}
+
+.floating-delay {
+  animation-delay: 2s;
+}
+
+/* Separate animation so it doesn't interfere with layout */
+@keyframes directorFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============ ENROLLMENT ============ */
+.enrollment {
+  padding: 8rem 0;
+  background-color: var(--bg-primary);
+}
+
+.enroll-card {
+  background-color: #2c3e50; /* Keep the card dark for impact */
+  color: white;
+  padding: 5rem 2rem;
+  text-align: center;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ornament-tl, .ornament-br {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border: 2px solid rgba(212, 175, 55, 0.2);
+}
+
+.ornament-tl {
+  top: -20px;
+  left: -20px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.ornament-br {
+  bottom: -20px;
+  right: -20px;
+  border-left: none;
+  border-top: none;
+}
+
+.enroll-card .eyebrow {
+  justify-content: center;
+  color: var(--gold);
+}
+
+.enroll-price {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  color: var(--gold);
+  margin: 1rem 0;
+  line-height: 1;
+}
+
+.enroll-price small {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: rgba(255,255,255,0.6);
+}
+
+.enroll-list {
+  list-style: none;
+  margin: 3rem auto;
+  max-width: 500px;
+  text-align: left;
+}
+
+.enroll-list li {
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.enroll-list li::before {
+  content: '✓';
+  color: var(--gold);
+  font-weight: bold;
+}
+
+/* ============ TESTIMONIALS ============ */
+.testimonial {
+  padding: 8rem 0;
+  background-color: var(--bg-secondary);
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+}
+
+.testimonial-card {
+  padding: 2rem;
+  text-align: center;
+}
+
+.testimonial-card p {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--text-main);
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.testimonial-card p::before {
+  content: '"';
+  font-family: var(--font-display);
+  font-size: 4rem;
+  color: var(--gold);
+  opacity: 0.2;
+  position: absolute;
+  top: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.testimonial-card cite {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-style: normal;
+}
+
+/* ============ CONTACT ============ */
+.contact {
+  padding: 8rem 0 10rem;
+  background-color: var(--bg-primary);
+  text-align: center;
+}
+
+.whatsapp-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: #25D366;
+  color: white;
+  padding: 1.25rem 2.5rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 2rem 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-cta svg {
+  width: 24px;
+  height: 24px;
+}
+
+.contact-phone {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+}
+
+.contact-note {
+  color: var(--text-muted);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.wa-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25D366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  z-index: 100;
+  transition: transform 0.3s ease;
+}
+
+.wa-float:hover {
+  transform: scale(1.1);
+}
+
+.wa-float svg {
+  width: 30px;
+  height: 30px;
+}
+
+/* ============ FOOTER ============ */
+footer {
+  background-color: var(--text-main);
+  color: white;
+  padding: 6rem 0 2rem;
+  text-align: center;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+footer .brand {
+  color: white;
+}
+
+.footer-arabic {
+  font-family: var(--font-arabic);
+  font-size: 2.5rem;
+  color: var(--gold);
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--gold);
+}
+
+.footer-copy {
+  color: rgba(255,255,255,0.4);
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 2rem;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Utilities */
+.ar { font-family: var(--font-arabic); }
+.en { font-family: var(--font-body); }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a class="brand" href="#top"><span class="brand-mark">ه</span> Happy&nbsp;Madrassa</a>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#why">Why Us</a>
+      <a href="#curriculum">Curriculum</a>
+      <a href="#directors">Directors</a>
+      <a href="#enrollment">Enrollment</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="https://wa.me/919495239272?text=Assalamu%20Alaikum%2C%20I%20would%20like%20to%20learn%20more%20about%20Happy%20Madrassa." target="_blank" rel="noopener">Message Us</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+  <div class="hero-content">
+    <p class="eyebrow">By Invitation · Private Islamic Tutoring</p>
+    <h1>An Elite Education in Deen,<br><em>Delivered to Your Doorstep</em></h1>
+    <p class="hero-sub">Happy Madrassa carries Kerala's centuries-old madrassa tradition — Qur'an, Tajweed, Fiqh, Akhlaq — into the homes of Malayali Muslim families across Canada, the UK, the USA, Australia, Fiji and beyond. One child. One Ustaad. One sacred hour a day.</p>
+    <div class="hero-actions">
+      <a class="btn-gold" href="https://wa.me/919495239272?text=Assalamu%20Alaikum%2C%20I%20would%20like%20to%20learn%20more%20about%20Happy%20Madrassa." target="_blank" rel="noopener">Begin a Private Consultation</a>
+      <a class="btn-ghost" href="#curriculum">View the Curriculum</a>
+    </div>
+    <div class="hero-stats">
+      <div><strong>1:1</strong><span>Private tutoring, never a classroom of thirty</span></div>
+      <div><strong>5</strong><span>Continents of Malayali families we serve</span></div>
+      <div><strong>$220</strong><span>Monthly investment in a lifetime of Iman</span></div>
+    </div>
+  </div>
+  <div class="hero-photo floating">
+    <img src="DSC07703 (1).webp" alt="Happy Madrassa students" loading="eager" />
+    <p class="hero-photo-caption">Kerala's madrassa spirit, wherever home may be</p>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Trusted in</span> Toronto <span>·</span> London <span>·</span> Dubai <span>·</span> Melbourne <span>·</span> Auckland <span>·</span> New York <span>·</span> Doha <span>·</span> Suva <span>·</span> Kuala Lumpur
+    <span>Trusted in</span> Toronto <span>·</span> London <span>·</span> Dubai <span>·</span> Melbourne <span>·</span> Auckland <span>·</span> New York <span>·</span> Doha <span>·</span> Suva <span>·</span> Kuala Lumpur
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div class="about-copy reveal">
+      <p class="eyebrow">Our Philosophy</p>
+      <h2 style="font-family:var(--font-display); font-size:clamp(30px, 3.6vw, 44px); margin:0 0 26px; color:var(--text-main); font-weight:600;">Not a madrassa.<br>Your family's madrassa.</h2>
+      <p class="lede">"We built Happy Madrassa for parents who left Kerala, but never wish their children to leave Islam."</p>
+      <p>Every year, thousands of Malayali Muslim families settle far from home — in Toronto, Melbourne, London, Suva — and discover there is no madrassa on the corner, no Ustaad down the street, no evening class after Maghrib. The rigour of a Kerala religious education becomes a memory rather than an inheritance.</p>
+      <p>Happy Madrassa exists to close that distance. We pair each child with a single, personally vetted Ustaad for focused, private instruction — conducted with the warmth of a family tutor and the discipline of a traditional Kerala madrassa, scheduled entirely around your household's life abroad.</p>
+    </div>
+    <div class="about-photo reveal">
+      <img src="muslim-children-studying-classroom.jpg" alt="A student focused on her Islamic studies" />
+      <div class="ornament"></div>
+      <div class="about-accent">
+        <img src="medium-shot-smiley-islamic-girl.jpg" alt="A student writing during her private lesson" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY ============ -->
+<section class="why" id="why">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="eyebrow" style="justify-content:center;">The Difference</p>
+      <h2>Why Discerning Families Choose Us</h2>
+      <p>A standard reserved for households who will accept nothing less for their children's Deen.</p>
+    </div>
+  </div>
+  <div class="why-grid">
+    <div class="why-card reveal">
+      <svg class="why-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M8 10c8-4 16-4 16 0v28c0-4-8-4-16 0V10Z"/><path d="M40 10c-8-4-16-4-16 0v28c0-4 8-4 16 0V10Z"/></svg>
+      <h3>Handpicked Ustaads</h3>
+      <p>Every teacher is personally interviewed and selected for scholarship, character and fluency in Malayalam and English.</p>
+    </div>
+    <div class="why-card reveal">
+      <svg class="why-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="24" cy="24" r="18"/><path d="M6 24h36M24 6c6 5 6 31 0 36M24 6c-6 5-6 31 0 36"/></svg>
+      <h3>Rooted in Kerala Tradition</h3>
+      <p>A curriculum shaped by the Ahlus Sunnah scholarship of Kerala's own madrassas — not diluted for distance.</p>
+    </div>
+    <div class="why-card reveal">
+      <svg class="why-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="24" cy="16" r="8"/><path d="M8 42c0-9 7-16 16-16s16 7 16 16"/></svg>
+      <h3>Always Private</h3>
+      <p>One Ustaad, one child, every session. No shared classrooms, no divided attention.</p>
+    </div>
+    <div class="why-card reveal">
+      <svg class="why-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="24" cy="24" r="18"/><path d="M24 13v11l8 5"/></svg>
+      <h3>Built Around Your Time Zone</h3>
+      <p>Sessions scheduled to fit your household's life abroad, not the other way around.</p>
+    </div>
+    <div class="why-card reveal">
+      <svg class="why-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M24 6 6 14v10c0 11 7.5 17.5 18 20 10.5-2.5 18-9 18-20V14L24 6Z"/></svg>
+      <h3>Discreet & Confidential</h3>
+      <p>A quiet, dignified experience, as befits families who value their privacy.</p>
+    </div>
+    <div class="why-card reveal">
+      <svg class="why-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M8 38V18l16-10 16 10v20"/><path d="M18 38V26h12v12"/></svg>
+      <h3>Parents Always Informed</h3>
+      <p>Direct access to our Directors and regular progress notes — never left wondering.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCRIPTURE BANNER ============ -->
+<section class="banner">
+  <img src="muslim-men-reading-quran-ramadan.jpg" alt="A student reciting from the Qur'an" />
+  <div class="banner-content reveal">
+    <p class="banner-arabic">وَقُل رَّبِّ زِدْنِي عِلْمًا</p>
+    <p>"And say, my Lord, increase me in knowledge."</p>
+    <cite>Surah Ta-Ha, 20:114</cite>
+  </div>
+</section>
+
+<!-- ============ CURRICULUM ============ -->
+<section class="curriculum" id="curriculum">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">The Course of Study</p>
+      <h2>A Curriculum Fit for a Lifetime</h2>
+      <p>Structured in the tradition of Kerala's great madrassas, delivered one child at a time.</p>
+    </div>
+    <div class="curr-list reveal">
+      <div class="curr-item">
+        <div class="curr-name"><span class="ar">القرآن والتجويد</span><span class="en">Qur'an & Tajweed</span></div>
+        <div class="curr-desc">Correct recitation, memorisation and the rules of Tajweed</div>
+      </div>
+      <div class="curr-item">
+        <div class="curr-name"><span class="ar">العقيدة</span><span class="en">Aqeedah</span></div>
+        <div class="curr-desc">The foundations of Islamic belief, clearly and firmly taught</div>
+      </div>
+      <div class="curr-item">
+        <div class="curr-name"><span class="ar">الفقه</span><span class="en">Fiqh</span></div>
+        <div class="curr-desc">Everyday jurisprudence — worship, conduct and daily practice</div>
+      </div>
+      <div class="curr-item">
+        <div class="curr-name"><span class="ar">السيرة</span><span class="en">Seerah</span></div>
+        <div class="curr-desc">The life of the Prophet ﷺ as a living example</div>
+      </div>
+      <div class="curr-item">
+        <div class="curr-name"><span class="ar">التربية</span><span class="en">Tharbiyyath</span></div>
+        <div class="curr-desc">The gentle, sustained nurturing of character, discipline and taqwa in daily life</div>
+      </div>
+      <div class="curr-item">
+        <div class="curr-name"><span class="ar">الأخلاق</span><span class="en">Akhlaq</span></div>
+        <div class="curr-desc">Character, manners and the etiquette of a practising Muslim</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ============ DIRECTORS ============ -->
+<section class="directors" id="directors" style="position: relative; clear: both;">
+  <div class="container">
+    
+    <!-- Header Text Block -->
+    <div class="section-head center reveal" style="margin-bottom: 50px; text-align: center; position: relative; z-index: 2;">
+      <p class="eyebrow" style="justify-content:center;">Leadership</p>
+      <h2>Guided by Scholars You Can Trust</h2>
+      <p style="margin-bottom: 30px; line-height: 1.6;">Happy Madrassa is directed by two individuals who bring both religious authority and academic rigour to every child's education.</p>
+    </div>
+    
+    <!-- Directors Grid (Pushed down and cleared) -->
+    <div class="directors-grid" style="display: flex; gap: 30px; justify-content: center; align-items: flex-start; clear: both; margin-top: 40px; position: relative; z-index: 1;">
+     
+
+ <p </p>
+      <!-- Card 1 -->
+      <div class="director-card reveal">
+        <div class="director-frame floating-slow">
+          <div class="ring outer"></div>
+          <div class="ring"></div>
+          <div class="director-avatar"><img src="503309356_3946134342315248_7701875588938657124_n.jpg" alt="Adv. Abdul Nasar Saqafi" /></div>
+         </div>
+        <h3>Adv. Abdul Nasar Saqafi</h3>
+        <p class="director-role">Imam &amp; Advocate</p>
+        <p class="director-bio">Combines the authority of the minbar with the discipline of the courtroom, overseeing the religious integrity of every lesson taught at Happy Madrassa.</p>
+      </div>
+      
+
+
+      <!-- Card 2 -->
+      <div class="director-card reveal">
+        <div class="director-frame floating-slow floating-delay">
+          <div class="ring outer"></div>
+          <div class="ring"></div>
+          <div class="director-avatar"><img src="Screenshot 2026-08-02 204512.jpg" alt="Muhammad Rashid" /></div>
+         </div>
+        <h3>Muhammad Rashid</h3>
+        <p class="director-role">PhD Scholar · Cognitive Psychologist</p>
+        <p class="director-bio">Brings a scholar's understanding of how children learn, shaping a curriculum that is rigorous, age-appropriate and built to last a lifetime.</p>
+      </div>
+
+    </div> <!-- End of directors-grid -->
+  </div> <!-- End of container -->
+</section>
+
+
+
+<!-- ============ ENROLLMENT ============ -->
+<section class="enrollment" id="enrollment">
+  <div class="container">
+    <div class="enroll-card reveal">
+      <div class="ornament-tl"></div>
+      <div class="ornament-br"></div>
+      <p class="eyebrow">Private Enrollment</p>
+      <div class="enroll-price">$220<small>&nbsp;/ month</small></div>
+      <p style="color:rgba(255,255,255,0.7); max-width:420px; margin:0 auto;">A single, all-inclusive tuition for one child — private, personal, and without compromise.</p>
+      <ul class="enroll-list">
+        <li>Daily one-to-one sessions with a personally matched Ustaad</li>
+        <li>Full curriculum: Qur'an, Tajweed, Fiqh, Aqeedah, Seerah, Arabic &amp; Akhlaq</li>
+        <li>Scheduling built around your family's time zone</li>
+        <li>Regular progress reports sent directly to parents</li>
+        <li>Direct line to the Directors, always</li>
+      </ul>
+      <div>
+        <a class="btn-gold" href="https://wa.me/919495239272?text=Assalamu%20Alaikum%2C%20I%20would%20like%20to%20learn%20more%20about%20Happy%20Madrassa." target="_blank" rel="noopener">Reserve Your Child's Place</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="testimonial">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="eyebrow" style="justify-content:center;">In Their Words</p>
+      <h2>Families Across the World</h2>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card reveal">
+        <p>"Our daughter now looks forward to her lesson the way she looks forward to Eid."</p>
+        <cite>— A Happy Madrassa Parent, Doha</cite>
+      </div>
+      <div class="testimonial-card reveal">
+        <p>"Finally, a madrassa that understands what it means to raise a Malayali Muslim child abroad."</p>
+        <cite>— A Happy Madrassa Parent, Melbourne</cite>
+      </div>
+      <div class="testimonial-card reveal">
+        <p>"The discipline of Kerala, delivered with the warmth of home."</p>
+        <cite>— A Happy Madrassa Parent, London</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="eyebrow" style="justify-content:center;">Get in Touch</p>
+      <h2>Speak with Us Directly</h2>
+      <p>Every enquiry begins with a private conversation, not a form.</p>
+    </div>
+    <a class="whatsapp-cta reveal" href="https://wa.me/919495239272?text=Assalamu%20Alaikum%2C%20I%20would%20like%20to%20learn%20more%20about%20Happy%20Madrassa." target="_blank" rel="noopener">
+      <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.696 4.61 1.897 6.484L4 29l7.71-1.865A11.94 11.94 0 0 0 16.001 27C22.627 27 28 21.627 28 15S22.627 3 16.001 3Zm6.964 16.98c-.294.826-1.463 1.512-2.386 1.71-.634.135-1.462.243-4.25-.913-3.566-1.477-5.863-5.093-6.043-5.328-.173-.235-1.454-1.935-1.454-3.69 0-1.756.913-2.617 1.237-2.977.324-.36.706-.45.941-.45.235 0 .47.002.676.012.216.011.507-.082.792.605.294.706 1 2.462 1.089 2.64.088.178.147.387.03.622-.118.235-.177.382-.353.588-.176.206-.372.46-.53.618-.176.176-.36.367-.155.72.206.353.917 1.514 1.968 2.451 1.352 1.206 2.494 1.58 2.847 1.756.353.176.559.147.766-.088.206-.235.882-1.03 1.117-1.383.235-.353.47-.294.793-.176.324.117 2.058.97 2.41 1.147.354.176.588.264.676.412.088.147.088.853-.206 1.68Z"/></svg>
+      Chat with Us on WhatsApp
+    </a>
+    <p class="contact-phone">+91&nbsp;9495&nbsp;239&nbsp;272</p>
+    <p class="contact-note">Assalamu Alaikum — tap the button above and we'll respond personally, usually within the hour.</p>
+  </div>
+</section>
+
+<!-- floating whatsapp button -->
+<a class="wa-float" href="https://wa.me/919495239272?text=Assalamu%20Alaikum%2C%20I%20would%20like%20to%20learn%20more%20about%20Happy%20Madrassa." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.696 4.61 1.897 6.484L4 29l7.71-1.865A11.94 11.94 0 0 0 16.001 27C22.627 27 28 21.627 28 15S22.627 3 16.001 3Zm6.964 16.98c-.294.826-1.463 1.512-2.386 1.71-.634.135-1.462.243-4.25-.913-3.566-1.477-5.863-5.093-6.043-5.328-.173-.235-1.454-1.935-1.454-3.69 0-1.756.913-2.617 1.237-2.977.324-.36.706-.45.941-.45.235 0 .47.002.676.012.216.011.507-.082.792.605.294.706 1 2.462 1.089 2.64.088.178.147.387.03.622-.118.235-.177.382-.353.588-.176.206-.372.46-.53.618-.176.176-.36.367-.155.72.206.353.917 1.514 1.968 2.451 1.352 1.206 2.494 1.58 2.847 1.756.353.176.559.147.766-.088.206-.235.882-1.03 1.117-1.383.235-.353.47-.294.793-.176.324.117 2.058.97 2.41 1.147.354.176.588.264.676.412.088.147.088.853-.206 1.68Z"/></svg>
+</a>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container footer-inner">
+    <a class="brand" href="#top"><span class="brand-mark">ه</span> Happy&nbsp;Madrassa</a>
+    <div class="footer-arabic">وَقُل رَّبِّ زِدْنِي عِلْمًا</div>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#curriculum">Curriculum</a>
+      <a href="#directors">Directors</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+  <p class="footer-copy">© 2026 Happy Madrassa. Private Islamic tutoring for Malayali families around the world.</p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Navbar Scroll Effect
+    const nav = document.getElementById('mainNav');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+    });
+
+    // 2. Reveal Animations on Scroll
+    const revealElements = document.querySelectorAll('.reveal');
+    
+    const revealOptions = {
+        threshold: 0.15, // Trigger when 15% of element is visible
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                return;
+            } else {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target); // Stop observing once revealed
+            }
+        });
+    }, revealOptions);
+
+    revealElements.forEach(el => {
+        revealOnScroll.observe(el);
+    });
+    
+    // Trigger reveal immediately for items already in viewport on load
+    setTimeout(() => {
+        revealElements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if(rect.top < window.innerHeight) {
+                 el.classList.add('active');
+            }
+        });
+    }, 100);
+});
+</script>
+</body>
+</html>
