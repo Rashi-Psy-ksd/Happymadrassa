@@ -67,6 +67,33 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
 .back-link:hover { color: var(--gold); }
 .loading { text-align: center; font-size: 1.2rem; margin: 4rem 0; color: var(--text-muted); }
 
+/* Floating WhatsApp Button */
+.wa-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25D366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  z-index: 100;
+  transition: transform 0.3s ease;
+}
+
+.wa-float:hover {
+  transform: scale(1.1);
+}
+
+.wa-float svg {
+  width: 30px;
+  height: 30px;
+}
+
 footer { background-color: var(--text-main); color: white; padding: 6rem 0 2rem; text-align: center; }
 .footer-inner { display: flex; flex-direction: column; align-items: center; gap: 2rem; margin-bottom: 4rem; }
 .footer-arabic { font-family: var(--font-arabic); font-size: 2.5rem; color: var(--gold); }
@@ -80,10 +107,14 @@ footer { background-color: var(--text-main); color: white; padding: 6rem 0 2rem;
     <a class="brand" href="index.html"><span class="brand-mark">ه</span> Happy&nbsp;Madrassa</a>
     <nav class="nav-links">
       <a href="index.html#about">About</a>
+      <a href="index.html#why">Why Us</a>
       <a href="index.html#curriculum">Curriculum</a>
+      <a href="index.html#directors">Directors</a>
+      <a href="index.html#enrollment">Enrollment</a>
+      <a href="index.html#contact">Contact</a>
       <a href="blog.html" style="color:var(--text-main);">Journal</a>
     </nav>
-    <a class="nav-cta" href="https://wa.me/919495239272" target="_blank">Message Us</a>
+    <a class="nav-cta" href="https://wa.me/919495239272?text=Assalamu%20Alaikum%2C%20I%20would%20like%20to%20learn%20more%20about%20Happy%20Madrassa." target="_blank" rel="noopener">Message Us</a>
   </div>
 </header>
 
@@ -100,6 +131,11 @@ footer { background-color: var(--text-main); color: white; padding: 6rem 0 2rem;
         <a href="blog.html" class="back-link">← Back to Journal</a>
     </div>
 </div>
+
+<!-- floating whatsapp button -->
+<a class="wa-float" href="https://wa.me/919495239272?text=Assalamu%20Alaikum%2C%20I%20would%20like%20to%20learn%20more%20about%20Happy%20Madrassa." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.696 4.61 1.897 6.484L4 29l7.71-1.865A11.94 11.94 0 0 0 16.001 27C22.627 27 28 21.627 28 15S22.627 3 16.001 3Zm6.964 16.98c-.294.826-1.463 1.512-2.386 1.71-.634.135-1.462.243-4.25-.913-3.566-1.477-5.863-5.093-6.043-5.328-.173-.235-1.454-1.935-1.454-3.69 0-1.756.913-2.617 1.237-2.977.324-.36.706-.45.941-.45.235 0 .47.002.676.012.216.011.507-.082.792.605.294.706 1 2.462 1.089 2.64.088.178.147.387.03.622-.118.235-.177.382-.353.588-.176.206-.372.46-.53.618-.176.176-.36.367-.155.72.206.353.917 1.514 1.968 2.451 1.352 1.206 2.494 1.58 2.847 1.756.353.176.559.147.766-.088.206-.235.882-1.03 1.117-1.383.235-.353.47-.294.793-.176.324.117 2.058.97 2.41 1.147.354.176.588.264.676.412.088.147.088.853-.206 1.68Z"/></svg>
+</a>
 
 <footer>
   <div class="container footer-inner">
