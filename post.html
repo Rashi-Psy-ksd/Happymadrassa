@@ -54,7 +54,16 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
 
 /* The container that holds the parsed Markdown */
 .article-body { max-width: 720px; margin: 0 auto 8rem; font-size: 1.15rem; line-height: 1.8; color: var(--text-muted); }
-.article-body img { width: 100%; border-radius: 8px; margin: 2rem 0; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+.article-body img { 
+  width: 100%; 
+  max-height: 450px; 
+  object-fit: cover; 
+  object-position: center;
+  border-radius: 6px; 
+  margin: 2.5rem 0; 
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08); 
+  display: block;
+}
 .article-body p { margin-bottom: 1.5rem; }
 .article-body h1, .article-body h2 { font-size: 2.2rem; margin: 3rem 0 1rem; color: var(--text-main); }
 .article-body h3 { font-size: 1.5rem; margin: 2rem 0 1rem; color: var(--text-main); }
@@ -180,7 +189,24 @@ footer { background-color: var(--text-main); color: white; padding: 6rem 0 2rem;
             // Format Date
             const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
             const dateStr = new Date(issue.created_at).toLocaleDateString('en-US', dateOptions);
-            const author = issue.user.login; // Pulls the username of who wrote it
+            
+            // --- NEW AUTHOR EXTRACTION LOGIC ---
+            let author = "Happy Madrassa Team"; // Default fallback
+            let rawBody = issue.body || ""; // Get the raw markdown text
+            
+            // Look for "Author: Name" at the very beginning of the post
+            const authorMatch = rawBody.match(/^Author:\s*(.+)/i);
+            
+            if (authorMatch) {
+                author = authorMatch[1].trim(); // Extract the typed name
+                // Remove that "Author" line and any immediate blank lines below it from the post body
+                rawBody = rawBody.replace(/^Author:\s*(.+)(\r?\n)+/i, ''); 
+            } else if (issue.user.login === 'Rashi-Psy-ksd') {
+                author = 'Muhammad Rashid'; // Fallback if you forget to add the tag
+            } else {
+                author = issue.user.login;
+            }
+            // ------------------------------------
 
             // Inject Header
             headerBlock.innerHTML = `
@@ -197,7 +223,7 @@ footer { background-color: var(--text-main); color: white; padding: 6rem 0 2rem;
 
             // Parse Markdown to HTML
             // Note: Marked.js was loaded in the <head> of this file
-            contentBlock.innerHTML = marked.parse(issue.body);
+            contentBlock.innerHTML = marked.parse(rawBody);
 
         } catch (error) {
             console.warn(error.message);
