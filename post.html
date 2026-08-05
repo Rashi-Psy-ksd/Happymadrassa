@@ -47,10 +47,10 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
 }
 .nav-cta { font-size: 0.9rem; font-weight: 500; color: var(--gold); border: 1px solid var(--gold); padding: 0.5rem 1.25rem; border-radius: 4px; transition: var(--transition); }
 
-.article-header { padding: 10rem 5% 4rem; text-align: center; max-width: 900px; margin: 0 auto; }
+.article-header { padding: 10rem 1.5% 4rem; text-align: center; max-width: 900px; margin: 0 auto; }
 .article-meta { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); font-weight: 500; margin-bottom: 1.5rem; display: flex; justify-content: center; align-items: center; gap: 1rem; }
 .article-meta span.dot { width: 4px; height: 4px; background-color: var(--gold); border-radius: 50%; }
-.article-title { font-size: clamp(2.5rem, 4vw, 4rem); margin-bottom: 2rem; }
+.article-title { font-size: clamp(2.5rem, 4vw, 4rem); margin-bottom: 0; }
 
 /* The container that holds the parsed Markdown */
 .article-body { max-width: 720px; margin: 0 auto 8rem; font-size: 1.15rem; line-height: 1.8; color: var(--text-muted); }
@@ -61,7 +61,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
   object-fit: cover; /* Crops the image elegantly to fit the frame */
   object-position: center;
   border-radius: 6px; 
-  margin: 2.5rem 0; /* Space above and below */
+  margin: 1rem 0 2.5rem; /* Pulled the image much closer to the title, kept bottom margin */
   box-shadow: 0 10px 30px rgba(0,0,0,0.06); 
   display: block;
 }
