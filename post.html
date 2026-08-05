@@ -54,16 +54,19 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
 
 /* The container that holds the parsed Markdown */
 .article-body { max-width: 720px; margin: 0 auto 8rem; font-size: 1.15rem; line-height: 1.8; color: var(--text-muted); }
+
 .article-body img { 
-  width: 100%; 
-  max-height: 450px; 
+  width: auto; 
+  max-width: 75%; /* Reduced width */
+  max-height: 315px; /* Roughly 30% smaller than previous 450px */
   object-fit: cover; 
   object-position: center;
   border-radius: 6px; 
-  margin: 2.5rem 0; 
+  margin: 2.5rem auto; /* Automatically centers the image */
   box-shadow: 0 15px 35px rgba(0,0,0,0.08); 
   display: block;
 }
+
 .article-body p { margin-bottom: 1.5rem; }
 .article-body h1, .article-body h2 { font-size: 2.2rem; margin: 3rem 0 1rem; color: var(--text-main); }
 .article-body h3 { font-size: 1.5rem; margin: 2rem 0 1rem; color: var(--text-main); }
