@@ -56,14 +56,13 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
 .article-body { max-width: 720px; margin: 0 auto 8rem; font-size: 1.15rem; line-height: 1.8; color: var(--text-muted); }
 
 .article-body img { 
-  width: auto; 
-  max-width: 60%; /* Reduced by another 20% */
-  max-height: 150px; /* Reduced by another 20% */
-  object-fit: cover; 
+  width: 100%; /* Matches the exact width of your paragraphs perfectly */
+  max-height: 400px; /* Prevents tall mobile photos from taking up the whole screen */
+  object-fit: cover; /* Crops the image elegantly to fit the frame */
   object-position: center;
   border-radius: 6px; 
-  margin: 2.5rem auto; /* Automatically centers the image */
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08); 
+  margin: 2.5rem 0; /* Space above and below */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06); 
   display: block;
 }
 
