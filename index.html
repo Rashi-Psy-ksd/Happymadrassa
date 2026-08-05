@@ -17,13 +17,13 @@
 <style>
 :root {
   /* Light Theme Palette */
-  --bg-primary: #ffffff; /* Clean white background */
-  --bg-secondary: #f9f9f9; /* Very light grey for contrast sections */
-  --text-main: #1a202c; /* Near black for optimal readability */
-  --text-muted: #4a5568; /* Dark grey for secondary text */
-  --gold: #d4af37; /* Classic bright gold */
+  --bg-primary: #ffffff; 
+  --bg-secondary: #f9f9f9; 
+  --text-main: #1a202c; 
+  --text-muted: #4a5568; 
+  --gold: #d4af37; 
   --gold-hover: #b5952f;
-  --accent-light: #e2e8f0; /* Soft border/accent color */
+  --accent-light: #e2e8f0; 
   
   --font-display: 'Cormorant Garamond', serif;
   --font-body: 'Jost', sans-serif;
@@ -410,7 +410,6 @@ h1, h2, h3 {
   text-align: center;
   z-index: 3;
 }
-
 .floating {
   animation: float 6s ease-in-out infinite;
 }
@@ -1069,7 +1068,7 @@ footer .brand {
 .ar { font-family: var(--font-arabic); }
 .en { font-family: var(--font-body); }
 
-/* ============ SPA & BLOG STYLES ============ */
+/* ============ ADD THESE SPA & BLOG STYLES HERE ============ */
 .view-section { display: none; }
 .view-section.active { display: block; }
 
@@ -1089,7 +1088,7 @@ footer .brand {
 .article-meta span.dot { width: 4px; height: 4px; background-color: var(--gold); border-radius: 50%; }
 .article-title { font-size: clamp(2.5rem, 4vw, 4rem); margin-bottom: 0; }
 .article-body { max-width: 720px; margin: 0 auto 8rem; font-size: 1.15rem; line-height: 1.8; color: var(--text-muted); }
-.article-body img { width: auto; max-width: 100%; max-height: 400px; object-fit: cover; object-position: center; border-radius: 6px; margin: 1rem auto 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.06); display: block; }
+.article-body img { width: 100%; max-height: 400px; object-fit: cover; object-position: center; border-radius: 6px; margin: 1rem 0 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.06); display: block; }
 .article-body p { margin-bottom: 1.5rem; }
 .article-body h1, .article-body h2 { font-size: 2.2rem; margin: 3rem 0 1rem; color: var(--text-main); }
 .article-body h3 { font-size: 1.5rem; margin: 2rem 0 1rem; color: var(--text-main); }
@@ -1115,6 +1114,7 @@ footer .brand {
       <a href="#directors">Directors</a>
       <a href="#enrollment">Enrollment</a>
       <a href="#contact">Contact</a>
+      <!-- CHANGE THIS LINK TO USE A HASH -->
       <a href="#journal">Journal</a>
     </nav>
     <a class="nav-cta" href="https://wa.me/919495239272?text=Assalamu%20Alaikum%2C%20I%20would%20like%20to%20learn%20more%20about%20Happy%20Madrassa." target="_blank" rel="noopener">Message Us</a>
@@ -1280,8 +1280,6 @@ footer .brand {
     <!-- Directors Grid (Pushed down and cleared) -->
     <div class="directors-grid" style="display: flex; gap: 30px; justify-content: center; align-items: flex-start; clear: both; margin-top: 40px; position: relative; z-index: 1;">
      
-
- <p </p>
       <!-- Card 1 -->
       <div class="director-card reveal">
         <div class="director-frame floating-slow">
@@ -1378,34 +1376,39 @@ footer .brand {
   </div>
 </section>
 
-<!-- ============ ADD THE TWO NEW VIEWS HERE ============ -->
+<!-- ============ ADD THIS CLOSING TAG TO END YOUR HOME WRAPPER ============ -->
+</main>
+
+
+<!-- ============ ADD THE TWO NEW VIEWS HERE (BEFORE FOOTER) ============ -->
 <main id="view-journal" class="view-section">
-  <section class="page-header" style="padding: 12rem 5% 6rem; text-align: center; background-color: var(--bg-secondary);">
-      <div class="container">
-          <p class="eyebrow" style="justify-content:center;">Insights & Reflections</p>
-          <h1 style="font-size: clamp(3rem, 5vw, 4.5rem); margin-bottom: 1rem; font-family: var(--font-display); color: var(--text-main);">The Madrassa Journal</h1>
-          <p style="font-size: 1.15rem; color: var(--text-muted); max-width: 600px; margin: 0 auto;">Reflections on raising Muslim children abroad, Islamic pedagogy, and maintaining heritage in the diaspora.</p>
-      </div>
-  </section>
-  <section class="container">
-      <div class="blog-grid" id="blog-grid">
-          <div class="loading">Loading journal entries...</div>
-      </div>
-  </section>
+    <section class="page-header" style="padding: 12rem 5% 6rem; text-align: center; background-color: var(--bg-secondary);">
+        <div class="container">
+            <p class="eyebrow" style="justify-content:center;">Insights & Reflections</p>
+            <h1 style="font-size: clamp(3rem, 5vw, 4.5rem); margin-bottom: 1rem; font-family: var(--font-display); color: var(--text-main);">The Madrassa Journal</h1>
+            <p style="font-size: 1.15rem; color: var(--text-muted); max-width: 600px; margin: 0 auto;">Reflections on raising Muslim children abroad, Islamic pedagogy, and maintaining heritage in the diaspora.</p>
+        </div>
+    </section>
+    <section class="container">
+        <div class="blog-grid" id="blog-grid">
+            <div class="loading">Loading journal entries...</div>
+        </div>
+    </section>
 </main>
 
 <main id="view-post" class="view-section">
-  <header class="article-header" id="dynamic-header">
-      <div class="loading">Loading Article...</div>
-  </header>
-  <div class="container">
-      <article class="article-body" id="dynamic-content"></article>
-      <div style="max-width: 720px; margin: 0 auto;">
-          <a href="#journal" class="back-link">← Back to Journal</a>
-      </div>
-  </div>
+    <header class="article-header" id="dynamic-header">
+        <div class="loading">Loading Article...</div>
+    </header>
+    <div class="container">
+        <article class="article-body" id="dynamic-content"></article>
+        <div style="max-width: 720px; margin: 0 auto;">
+            <a href="#journal" class="back-link">← Back to Journal</a>
+        </div>
+    </div>
 </main>
 <!-- ============ END OF NEW VIEWS ============ -->
+
 
 <!-- floating whatsapp button -->
 <a class="wa-float" href="https://wa.me/919495239272?text=Assalamu%20Alaikum%2C%20I%20would%20like%20to%20learn%20more%20about%20Happy%20Madrassa." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
@@ -1422,7 +1425,8 @@ footer .brand {
       <a href="#curriculum">Curriculum</a>
       <a href="#directors">Directors</a>
       <a href="#contact">Contact</a>
-      <a href="blog.html">Journal</a>
+      <!-- CHANGE THIS LINK TO USE A HASH -->
+      <a href="#journal">Journal</a>
     </div>
   </div>
   <p class="footer-copy">© 2026 Happy Madrassa. Private Islamic tutoring for Malayali families around the world.</p>
@@ -1447,7 +1451,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const revealOptions = {
         threshold: 0.15, // Trigger when 15% of element is visible
         rootMargin: "0px 0px -50px 0px"
-    };
+};
 
     const revealOnScroll = new IntersectionObserver(function(entries, observer) {
         entries.forEach(entry => {
@@ -1472,8 +1476,9 @@ document.addEventListener('DOMContentLoaded', () => {
                  el.classList.add('active');
             }
         });
-    }, 100)
+    }, 100);
 });
+
 // ============ ADD ALL OF THIS SCRIPT AT THE VERY BOTTOM ============
 const GITHUB_USERNAME = 'Rashi-Psy-ksd'; 
 const GITHUB_REPO = 'Happymadrassa'; 
@@ -1572,7 +1577,8 @@ async function fetchBlogs() {
         });
     } catch (error) {
         console.warn(error.message);
-        blogGrid.innerHTML = `<p style="grid-column: 1/-1; text-align:center; color: red;">${error.message} Make sure your repository is Public.</p>`;
+        // NO DEMO POSTS: Just a clean, professional fallback message
+        blogGrid.innerHTML = `<p style="grid-column: 1/-1; text-align:center; color: var(--text-muted);">Journal entries are currently unavailable. Please check back later.</p>`;
     }
 }
 
@@ -1619,7 +1625,7 @@ async function loadPost(issueId) {
         headerBlock.innerHTML = `<h1 class="article-title">Post Not Found</h1>`;
         contentBlock.innerHTML = `<p style="text-align:center; color:var(--text-muted); margin-top:2rem;">The article you are looking for is currently unavailable. Please ensure your GitHub repository is set to Public.</p>`;
     }
-
+}
 </script>
 </body>
 </html>
